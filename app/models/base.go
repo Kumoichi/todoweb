@@ -44,7 +44,6 @@ func init() {
 		created_at DATETIME)`, tableNameTodo)
 
 	Db.Exec(cmdT)
-
 }
 
 func createUUID() (uuidobj uuid.UUID) {
