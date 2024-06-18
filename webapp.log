@@ -1559,3 +1559,13 @@ net/http.(*conn).serve(0xc00011ea20, {0x102ca94e8, 0xc00009d1d0})
 	/usr/local/go/src/net/http/server.go:2039 +0x5e8
 created by net/http.(*Server).Serve in goroutine 1
 	/usr/local/go/src/net/http/server.go:3285 +0x4b4
+2024/06/18 16:36:34 users.go:106: near ")": syntax error
+2024/06/18 16:36:34 main.go:18: sql: no rows in result set
+2024/06/18 16:50:53 users.go:106: near ")": syntax error
+2024/06/18 16:50:53 main.go:18: sql: no rows in result set
+2024/06/18 16:55:03 users.go:106: no such table: session
+2024/06/18 16:55:03 main.go:18: sql: no rows in result set
+2024/06/18 16:57:20 users.go:106: no such table: session
+2024/06/18 16:57:20 main.go:18: sql: no rows in result set
+2024/06/18 17:01:00 users.go:108: no such table: session
+2024/06/18 17:01:00 main.go:18: no session found for user_id 1 and email test@example.com
