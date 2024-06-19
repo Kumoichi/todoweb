@@ -1569,3 +1569,5 @@ created by net/http.(*Server).Serve in goroutine 1
 2024/06/18 16:57:20 main.go:18: sql: no rows in result set
 2024/06/18 17:01:00 users.go:108: no such table: session
 2024/06/18 17:01:00 main.go:18: no session found for user_id 1 and email test@example.com
+2024/06/19 10:40:58 route_auth.go:38: sql: no rows in result set
+2024/06/19 10:40:58 server.go:3413: http: superfluous response.WriteHeader call from todo_app/app/controllers.authenticate (route_auth.go:56)
