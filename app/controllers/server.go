@@ -21,7 +21,9 @@ func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) 
 func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
 	cookie, err := r.Cookie("_cookie")
 	if err == nil {
+		//ここでのsessはインスタンス。だけどUUIDの部分しかオブジェクトに埋まっていない状態。ほかは空
 		sess = models.Session{UUID: cookie.Value}
+		//okはvalidのブール値を保持している
 		if ok, _ := sess.CheckSession(); !ok {
 			err = fmt.Errorf("Invalid session")
 		}

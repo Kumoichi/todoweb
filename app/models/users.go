@@ -118,6 +118,7 @@ func (sess *Session) CheckSession() (valid bool, err error) {
 	cmd := `select id, uuid, email, user_id, created_at
 	from sessions where uuid = ?`
 
+	//Scanが成功した場合にはNil、失敗した場合はエラーを返す
 	err = Db.QueryRow(cmd, sess.UUID).Scan(&sess.ID, &sess.UUID, &sess.Email, &sess.UserID, &sess.CreatedAt)
 
 	if err != nil {

@@ -15,8 +15,10 @@ func top(w http.ResponseWriter, r *http.Request) {
 func index(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
 	if err != nil {
+		//sessionを保持してなければルートにリダイレクト
 		http.Redirect(w, r, "/", 302)
 	} else {
+		// sessionを保持していればindexに遷移
 		generateHTML(w, nil, "layout", "private_navbar", "index")
 	}
 }
