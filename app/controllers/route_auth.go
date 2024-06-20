@@ -31,6 +31,17 @@ func login(w http.ResponseWriter, r *http.Request) {
 	generateHTML(w, nil, "layout", "public_navbar", "login")
 }
 
+//getの解析
+// リクエストされたユーザーのメールアドレスを取得
+// 取得の際にエラーがあればLoginにリダイレクト
+// パスワードをリクエストパスワードとユーザーパスワードを比較
+// あっていたらセッションの作成
+// セッションの作成の際に問題があればエラーを止める
+// クッキーへName,Value、HttpOnlyを入れる
+// クッキーのセット
+// ルートパスへとリダイレクト
+// パスワードが間違っていたらログインページへとリダイレクト
+
 func authenticate(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	user, err := models.GetUserByEmail(r.PostFormValue("email"))
