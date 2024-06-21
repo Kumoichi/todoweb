@@ -33,7 +33,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// todoを作るページへと移動
+// todoを作るページへと移動.
 func todoNew(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
 	if err != nil {
