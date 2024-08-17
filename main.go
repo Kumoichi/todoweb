@@ -1,25 +1,14 @@
 package main
 
 import (
+	"another_todo_app/app/controllers"
+	"another_todo_app/app/models"
 	"fmt"
-	"todo_app/app/controllers"
-	"todo_app/app/models"
 )
 
 func main() {
+
+	// User構造体のName,Email、Passwordに値を入れて,これらの値をCreateUserに入れる
 	fmt.Println(models.Db)
 	controllers.StartMainServer()
-
-	user, _ := models.GetUserByEmail("test@example.com")
-	fmt.Println(user)
-
-	// session, err := user.CreateSession()
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
-	// fmt.Println(session)
-
-	// valid, _ := session.CheckSession()
-	// fmt.Println(valid)
-
 }
